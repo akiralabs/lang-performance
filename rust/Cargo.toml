@@ -1,0 +1,23 @@
+[package]
+name = "rust"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+actix-web = "4"
+derive_more = "0.99.17"
+config = "0.13.3"
+log = "0.4"
+env_logger = "0.10.0"
+deadpool-postgres = { version = "0.10.5", features = ["serde"] }
+dotenv = "0.15.0"
+serde = { version = "1.0.152", features = ["derive"] }
+tokio-pg-mapper = "0.2.0"
+tokio-pg-mapper-derive = "0.2.0"
+tokio-postgres = "0.7.7"
+
+
+[profile.release]
+lto = true

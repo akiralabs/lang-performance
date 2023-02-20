@@ -1,0 +1,35 @@
+➜  k6 ./run.sh
+
+          /\      |‾‾| /‾‾/   /‾‾/   
+     /\  /  \     |  |/  /   /  /    
+    /  \/    \    |     (   /   ‾‾\  
+   /          \   |  |\  \ |  (‾)  | 
+  / __________ \  |__| \__\ \_____/ .io
+
+  execution: local
+     script: ./test.js
+     output: -
+
+  scenarios: (100.00%) 1 scenario, 1000 max VUs, 1m0s max duration (incl. graceful stop):
+           * default: 1000 looping VUs for 30s (gracefulStop: 30s)
+
+
+running (0m30.0s), 0000/1000 VUs, 524623 complete and 0 interrupted iterations
+default ✓ [======================================] 1000 VUs  30s
+
+     data_received..................: 229 MB 7.6 MB/s
+     data_sent......................: 45 MB  1.5 MB/s
+     http_req_blocked...............: avg=72.88µs min=838ns   med=2µs     max=81.44ms  p(90)=2.81µs  p(95)=3.51µs  
+     http_req_connecting............: avg=67.4µs  min=0s      med=0s      max=79.78ms  p(90)=0s      p(95)=0s      
+     http_req_duration..............: avg=56.97ms min=35.63ms med=54.38ms max=267.99ms p(90)=60.67ms p(95)=80.02ms 
+       { expected_response:true }...: avg=56.97ms min=35.63ms med=54.38ms max=267.99ms p(90)=60.67ms p(95)=80.02ms 
+     http_req_failed................: 0.00%  ✓ 0           ✗ 524623
+     http_req_receiving.............: avg=79.46µs min=11.72µs med=25.33µs max=98.34ms  p(90)=45.71µs p(95)=162.37µs
+     http_req_sending...............: avg=29.55µs min=4.67µs  med=9.25µs  max=99.95ms  p(90)=13.73µs p(95)=33.29µs 
+     http_req_tls_handshaking.......: avg=0s      min=0s      med=0s      max=0s       p(90)=0s      p(95)=0s      
+     http_req_waiting...............: avg=56.86ms min=35.59ms med=54.32ms max=241.85ms p(90)=60.57ms p(95)=79.73ms 
+     http_reqs......................: 524623 17463.79274/s
+     iteration_duration.............: avg=57.12ms min=35.67ms med=54.45ms max=318.38ms p(90)=60.78ms p(95)=80.15ms 
+     iterations.....................: 524623 17463.79274/s
+     vus............................: 1000   min=1000      max=1000
+     vus_max........................: 1000   min=1000      max=1000

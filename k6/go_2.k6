@@ -1,0 +1,35 @@
+➜  k6 ./run.sh      
+
+          /\      |‾‾| /‾‾/   /‾‾/   
+     /\  /  \     |  |/  /   /  /    
+    /  \/    \    |     (   /   ‾‾\  
+   /          \   |  |\  \ |  (‾)  | 
+  / __________ \  |__| \__\ \_____/ .io
+
+  execution: local
+     script: ./test.js
+     output: -
+
+  scenarios: (100.00%) 1 scenario, 1000 max VUs, 1m0s max duration (incl. graceful stop):
+           * default: 1000 looping VUs for 30s (gracefulStop: 30s)
+
+
+running (0m30.0s), 0000/1000 VUs, 519227 complete and 0 interrupted iterations
+default ✓ [======================================] 1000 VUs  30s
+
+     data_received..................: 235 MB 7.8 MB/s
+     data_sent......................: 44 MB  1.5 MB/s
+     http_req_blocked...............: avg=71.28µs min=824ns    med=1.99µs  max=155.94ms p(90)=2.9µs    p(95)=3.65µs  
+     http_req_connecting............: avg=64.5µs  min=0s       med=0s      max=58.77ms  p(90)=0s       p(95)=0s      
+     http_req_duration..............: avg=57.49ms min=529.4µs  med=23.75ms max=3.89s    p(90)=119.8ms  p(95)=191.36ms
+       { expected_response:true }...: avg=57.49ms min=529.4µs  med=23.75ms max=3.89s    p(90)=119.8ms  p(95)=191.36ms
+     http_req_failed................: 0.00%  ✓ 0            ✗ 519227
+     http_req_receiving.............: avg=87.25µs min=13.11µs  med=25.29µs max=149.21ms p(90)=46.07µs  p(95)=145.73µs
+     http_req_sending...............: avg=32.76µs min=4.58µs   med=9.3µs   max=126.33ms p(90)=15.15µs  p(95)=26.88µs 
+     http_req_tls_handshaking.......: avg=0s      min=0s       med=0s      max=0s       p(90)=0s       p(95)=0s      
+     http_req_waiting...............: avg=57.37ms min=498.58µs med=23.65ms max=3.89s    p(90)=119.64ms p(95)=191.05ms
+     http_reqs......................: 519227 17279.905877/s
+     iteration_duration.............: avg=57.71ms min=570.56µs med=23.88ms max=3.9s     p(90)=120.2ms  p(95)=192.49ms
+     iterations.....................: 519227 17279.905877/s
+     vus............................: 1000   min=1000       max=1000
+     vus_max........................: 1000   min=1000       max=1000
